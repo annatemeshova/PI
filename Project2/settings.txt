@@ -1,0 +1,3 @@
+project=Project2
+mode=base
+version=1.0
