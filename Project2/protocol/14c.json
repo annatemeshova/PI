@@ -1,0 +1,43 @@
+{
+  "step": "14c",
+  "title": "14. Завершение слияния после KDiff3",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI/Project2",
+  "captured_at": "2026-09-20T13:54:08+03:00",
+  "entries": [
+    {
+      "command": "git add settings.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git commit -m \"слияние br1->main: конфликт разрешен в KDiff3\"",
+      "output": "[main ca3eadb] слияние br1->main: конфликт разрешен в KDiff3\n",
+      "exit_code": 0
+    },
+    {
+      "command": "cat settings.txt",
+      "output": "project=Project2\nmode=stable\nversion=1.0\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git ls-files -u",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git show -s --format=\"commit: %h%nparents: %p%nsubject: %s\" HEAD",
+      "output": "commit: ca3eadb\nparents: 7b46a12 8fce157\nsubject: слияние br1->main: конфликт разрешен в KDiff3\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git log --graph --oneline --decorate main br1 -8",
+      "output": "*   ca3eadb (HEAD -> main) слияние br1->main: конфликт разрешен в KDiff3\n|\\  \n| * 8fce157 (br1) br1: выбран режим feature\n| * 2b5319a br1: добавлена памятка cherry-pick\n* | 7b46a12 main: выбран режим stable\n* | a5ca8f2 br1: добавлена памятка cherry-pick\n|/  \n* 2583824 squash br1->main: описание и пример возможности\n* 728ff12 br2: уточнено описание результатов\n* 12feeaa br2: добавлен этап перебазирования\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git status --short --branch",
+      "output": "## main...origin/main [ahead 11]\n",
+      "exit_code": 0
+    }
+  ]
+}

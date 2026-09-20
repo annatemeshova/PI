@@ -1,0 +1,48 @@
+{
+  "step": "10",
+  "title": "10. Squash двух фиксаций в main",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI/Project2",
+  "captured_at": "2026-09-20T13:39:25+03:00",
+  "entries": [
+    {
+      "command": "git switch main",
+      "output": "Switched to branch 'main'\nYour branch is ahead of 'origin/main' by 5 commits.\n  (use \"git push\" to publish your local commits)\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git merge --squash br1",
+      "output": "Updating 728ff12..9f2a1da\nFast-forward\nSquash commit -- not updating HEAD\n Project2/feature.txt | 3 +++\n 1 file changed, 3 insertions(+)\n create mode 100644 Project2/feature.txt\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --cached --stat",
+      "output": " Project2/feature.txt | 3 +++\n 1 file changed, 3 insertions(+)\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git commit -m \"squash br1->main: описание и пример возможности\"",
+      "output": "[main 2583824] squash br1->main: описание и пример возможности\n 1 file changed, 3 insertions(+)\n create mode 100644 Project2/feature.txt\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git show -s --format=\"commit: %h%nparents: %p%nsubject: %s\" HEAD",
+      "output": "commit: 2583824\nparents: 728ff12\nsubject: squash br1->main: описание и пример возможности\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --stat main br1",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git branch -D br1",
+      "output": "Deleted branch br1 (was 9f2a1da).\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git branch -v",
+      "output": "* main 2583824 [ahead 6] squash br1->main: описание и пример возможности\n",
+      "exit_code": 0
+    }
+  ]
+}

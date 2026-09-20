@@ -1,0 +1,48 @@
+{
+  "step": "02",
+  "title": "2. Начальная фиксация с тремя файлами",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI/Project2",
+  "captured_at": "2026-09-20T13:38:53+03:00",
+  "entries": [
+    {
+      "command": "printf '%s\\n' 'Project2' 'Лабораторная работа 2: ветвление Git.' 'Тема: слияние и перенос изменений.' > project.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "printf '%s\\n' 'План работы' '1. Создать ветви.' '2. Объединить изменения.' > plan.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "printf '%s\\n' 'project=Project2' 'mode=base' 'version=1.0' > settings.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "wc -l project.txt plan.txt settings.txt",
+      "output": "       3 project.txt\n       3 plan.txt\n       3 settings.txt\n       9 total\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git add project.txt plan.txt settings.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git commit -m \"Создан Project2 с тремя текстовыми файлами\"",
+      "output": "[main 5ddb5a5] Создан Project2 с тремя текстовыми файлами\n 3 files changed, 9 insertions(+)\n create mode 100644 Project2/plan.txt\n create mode 100644 Project2/project.txt\n create mode 100644 Project2/settings.txt\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git show --stat --oneline HEAD",
+      "output": "5ddb5a5 Создан Project2 с тремя текстовыми файлами\n Project2/plan.txt     | 3 +++\n Project2/project.txt  | 3 +++\n Project2/settings.txt | 3 +++\n 3 files changed, 9 insertions(+)\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git status --short --branch",
+      "output": "## main...origin/main [ahead 1]\n",
+      "exit_code": 0
+    }
+  ]
+}

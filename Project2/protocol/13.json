@@ -1,0 +1,58 @@
+{
+  "step": "13",
+  "title": "13. Противоречащие изменения в br1 и main",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI/Project2",
+  "captured_at": "2026-09-20T13:39:48+03:00",
+  "entries": [
+    {
+      "command": "git switch br1",
+      "output": "Switched to branch 'br1'\n",
+      "exit_code": 0
+    },
+    {
+      "command": "sed -i '' 's/mode=base/mode=feature/' settings.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git add settings.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git commit -m \"br1: выбран режим feature\"",
+      "output": "[br1 8fce157] br1: выбран режим feature\n 1 file changed, 1 insertion(+), 1 deletion(-)\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git switch main",
+      "output": "Switched to branch 'main'\nYour branch is ahead of 'origin/main' by 7 commits.\n  (use \"git push\" to publish your local commits)\n",
+      "exit_code": 0
+    },
+    {
+      "command": "sed -i '' 's/mode=base/mode=stable/' settings.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git add settings.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git commit -m \"main: выбран режим stable\"",
+      "output": "[main 7b46a12] main: выбран режим stable\n 1 file changed, 1 insertion(+), 1 deletion(-)\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff main br1 -- settings.txt",
+      "output": "diff --git a/Project2/settings.txt b/Project2/settings.txt\nindex 4ac390a..f4eb647 100644\n--- a/Project2/settings.txt\n+++ b/Project2/settings.txt\n@@ -1,3 +1,3 @@\n project=Project2\n-mode=stable\n+mode=feature\n version=1.0\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git log --graph --oneline --decorate main br1 -6",
+      "output": "* 7b46a12 (HEAD -> main) main: выбран режим stable\n* a5ca8f2 br1: добавлена памятка cherry-pick\n| * 8fce157 (br1) br1: выбран режим feature\n| * 2b5319a br1: добавлена памятка cherry-pick\n|/  \n* 2583824 squash br1->main: описание и пример возможности\n* 728ff12 br2: уточнено описание результатов\n",
+      "exit_code": 0
+    }
+  ]
+}

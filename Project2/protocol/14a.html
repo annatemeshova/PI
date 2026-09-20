@@ -1,0 +1,18 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><title>ЛР2 — 14. Слияние и обнаружение конфликта</title><style>
+    *{box-sizing:border-box}body{margin:0;background:#fff;color:#10151c;padding:22px 26px;font-family:Arial,sans-serif}
+    header{border-bottom:2px solid #283d52;padding-bottom:12px;margin-bottom:14px}h1{font-size:23px;margin:0 0 8px}
+    .meta{font:12px Arial;color:#425269;line-height:1.5}section{margin-bottom:10px}
+    .command,pre{font-family:Menlo,monospace;font-size:15px;line-height:1.34;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+    .command{font-weight:700;color:#174875}pre{padding-top:2px}
+    footer{font:12px Arial;color:#546173;border-top:1px solid #b4c0ca;padding-top:9px;margin-top:12px}
+    </style><header><h1>14. Слияние и обнаружение конфликта</h1><div class="meta">Лабораторная работа 2 · Протокол выполнения Git<br>/Users/fedos-mak/Documents/lr-Guz/PI/Project2 · 2026-09-20T13:40:20+03:00</div></header><section><div class="command">$ git config --local merge.tool kdiff3</div><pre></pre></section><section><div class="command">$ git config --local mergetool.kdiff3.path /Users/fedos-mak/Documents/lr-Guz/.tools/kdiff3.app/Contents/MacOS/kdiff3</div><pre></pre></section><section><div class="command">$ git config --local mergetool.keepBackup false</div><pre></pre></section><section><div class="command">$ git merge br1 -m &quot;слияние br1-&gt;main: конфликт разрешен в KDiff3&quot;</div><pre>Auto-merging Project2/settings.txt
+CONFLICT (content): Merge conflict in Project2/settings.txt
+Automatic merge failed; fix conflicts and then commit the result.</pre></section><section><div class="command">$ git status --short</div><pre>UU settings.txt</pre></section><section><div class="command">$ cat settings.txt</div><pre>project=Project2
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+mode=stable
+=======
+mode=feature
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; br1
+version=1.0</pre></section><section><div class="command">$ git ls-files -u</div><pre>100644 b80aefc963169c9734ac99bbbced76e86314e474 1	settings.txt
+100644 4ac390a10d75e243e85706909167f1d211936b84 2	settings.txt
+100644 f4eb64708b1cb7dcac34e0c99eed4a8e97e7719e 3	settings.txt</pre></section><footer>Вывод реально выполненных команд · Полный протокол сохранен в TXT и JSON</footer></html>

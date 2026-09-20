@@ -1,0 +1,26 @@
+1. Создание проекта Project2
+/Users/fedos-mak/Documents/lr-Guz/PI
+2026-09-20T13:38:53+03:00
+
+$ git switch main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+$ mkdir Project2
+
+
+$ git rev-parse --show-toplevel
+/Users/fedos-mak/Documents/lr-Guz/PI
+
+$ git branch --show-current
+main
+
+$ ls -ld Project1 Project2
+drwxr-xr-x@ 5 fedos-mak  staff  160 Sep 20 13:28 Project1
+drwxr-xr-x@ 2 fedos-mak  staff   64 Sep 20 13:38 Project2
+
+$ git --version
+git version 2.53.0
+
+$ git status --short --branch
+## main...origin/main

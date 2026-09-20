@@ -1,0 +1,20 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><title>ЛР2 — 10. Squash двух фиксаций в main</title><style>
+    *{box-sizing:border-box}body{margin:0;background:#fff;color:#10151c;padding:22px 26px;font-family:Arial,sans-serif}
+    header{border-bottom:2px solid #283d52;padding-bottom:12px;margin-bottom:14px}h1{font-size:23px;margin:0 0 8px}
+    .meta{font:12px Arial;color:#425269;line-height:1.5}section{margin-bottom:10px}
+    .command,pre{font-family:Menlo,monospace;font-size:15px;line-height:1.34;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+    .command{font-weight:700;color:#174875}pre{padding-top:2px}
+    footer{font:12px Arial;color:#546173;border-top:1px solid #b4c0ca;padding-top:9px;margin-top:12px}
+    </style><header><h1>10. Squash двух фиксаций в main</h1><div class="meta">Лабораторная работа 2 · Протокол выполнения Git<br>/Users/fedos-mak/Documents/lr-Guz/PI/Project2 · 2026-09-20T13:39:25+03:00</div></header><section><div class="command">$ git switch main</div><pre>Switched to branch &#x27;main&#x27;
+Your branch is ahead of &#x27;origin/main&#x27; by 5 commits.
+  (use &quot;git push&quot; to publish your local commits)</pre></section><section><div class="command">$ git merge --squash br1</div><pre>Updating 728ff12..9f2a1da
+Fast-forward
+Squash commit -- not updating HEAD
+ Project2/feature.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 Project2/feature.txt</pre></section><section><div class="command">$ git diff --cached --stat</div><pre> Project2/feature.txt | 3 +++
+ 1 file changed, 3 insertions(+)</pre></section><section><div class="command">$ git commit -m &quot;squash br1-&gt;main: описание и пример возможности&quot;</div><pre>[main 2583824] squash br1-&gt;main: описание и пример возможности
+ 1 file changed, 3 insertions(+)
+ create mode 100644 Project2/feature.txt</pre></section><section><div class="command">$ git show -s --format=&quot;commit: %h%nparents: %p%nsubject: %s&quot; HEAD</div><pre>commit: 2583824
+parents: 728ff12
+subject: squash br1-&gt;main: описание и пример возможности</pre></section><section><div class="command">$ git diff --stat main br1</div><pre></pre></section><section><div class="command">$ git branch -D br1</div><pre>Deleted branch br1 (was 9f2a1da).</pre></section><section><div class="command">$ git branch -v</div><pre>* main 2583824 [ahead 6] squash br1-&gt;main: описание и пример возможности</pre></section><footer>Вывод реально выполненных команд · Полный протокол сохранен в TXT и JSON</footer></html>

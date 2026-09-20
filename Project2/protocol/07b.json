@@ -1,0 +1,33 @@
+{
+  "step": "07b",
+  "title": "7. Перебазирование br2 на main",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI/Project2",
+  "captured_at": "2026-09-20T13:38:54+03:00",
+  "entries": [
+    {
+      "command": "git rebase main",
+      "output": "Rebasing (1/3)\nRebasing (2/3)\nRebasing (3/3)\nSuccessfully rebased and updated refs/heads/br2.\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git log --graph --oneline --decorate -6",
+      "output": "* 728ff12 (HEAD -> br2) br2: уточнено описание результатов\n* 12feeaa br2: добавлен этап перебазирования\n* 2912c27 fix1: дополнен план работы\n* 4b3e0d0 (main) br1: дополнено описание проекта\n* 5ddb5a5 Создан Project2 с тремя текстовыми файлами\n* 5473ed5 (origin/main, origin/HEAD) Обновлен отчет по лабораторной работе 1\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git rev-list --count main..br2",
+      "output": "3\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git rev-list --merges main..br2",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git status --short --branch",
+      "output": "## br2\n",
+      "exit_code": 0
+    }
+  ]
+}

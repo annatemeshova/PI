@@ -1,0 +1,34 @@
+14. Слияние и обнаружение конфликта
+/Users/fedos-mak/Documents/lr-Guz/PI/Project2
+2026-09-20T13:40:20+03:00
+
+$ git config --local merge.tool kdiff3
+
+
+$ git config --local mergetool.kdiff3.path /Users/fedos-mak/Documents/lr-Guz/.tools/kdiff3.app/Contents/MacOS/kdiff3
+
+
+$ git config --local mergetool.keepBackup false
+
+
+$ git merge br1 -m "слияние br1->main: конфликт разрешен в KDiff3"
+Auto-merging Project2/settings.txt
+CONFLICT (content): Merge conflict in Project2/settings.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+$ git status --short
+UU settings.txt
+
+$ cat settings.txt
+project=Project2
+<<<<<<< HEAD
+mode=stable
+=======
+mode=feature
+>>>>>>> br1
+version=1.0
+
+$ git ls-files -u
+100644 b80aefc963169c9734ac99bbbced76e86314e474 1	settings.txt
+100644 4ac390a10d75e243e85706909167f1d211936b84 2	settings.txt
+100644 f4eb64708b1cb7dcac34e0c99eed4a8e97e7719e 3	settings.txt

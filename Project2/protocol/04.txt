@@ -1,0 +1,14 @@
+4. Переименование fix1 в br2
+/Users/fedos-mak/Documents/lr-Guz/PI/Project2
+2026-09-20T13:38:54+03:00
+
+$ git branch -m fix1 br2
+
+
+$ git branch -v
+  br1  4b3e0d0 br1: дополнено описание проекта
+* br2  f743a46 fix1: дополнен план работы
+  main 5ddb5a5 [ahead 1] Создан Project2 с тремя текстовыми файлами
+
+$ git log -1 --oneline br2
+f743a46 fix1: дополнен план работы

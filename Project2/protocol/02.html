@@ -1,0 +1,19 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><title>ЛР2 — 2. Начальная фиксация с тремя файлами</title><style>
+    *{box-sizing:border-box}body{margin:0;background:#fff;color:#10151c;padding:22px 26px;font-family:Arial,sans-serif}
+    header{border-bottom:2px solid #283d52;padding-bottom:12px;margin-bottom:14px}h1{font-size:23px;margin:0 0 8px}
+    .meta{font:12px Arial;color:#425269;line-height:1.5}section{margin-bottom:10px}
+    .command,pre{font-family:Menlo,monospace;font-size:15px;line-height:1.34;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+    .command{font-weight:700;color:#174875}pre{padding-top:2px}
+    footer{font:12px Arial;color:#546173;border-top:1px solid #b4c0ca;padding-top:9px;margin-top:12px}
+    </style><header><h1>2. Начальная фиксация с тремя файлами</h1><div class="meta">Лабораторная работа 2 · Протокол выполнения Git<br>/Users/fedos-mak/Documents/lr-Guz/PI/Project2 · 2026-09-20T13:38:53+03:00</div></header><section><div class="command">$ printf &#x27;%s\n&#x27; &#x27;Project2&#x27; &#x27;Лабораторная работа 2: ветвление Git.&#x27; &#x27;Тема: слияние и перенос изменений.&#x27; &gt; project.txt</div><pre></pre></section><section><div class="command">$ printf &#x27;%s\n&#x27; &#x27;План работы&#x27; &#x27;1. Создать ветви.&#x27; &#x27;2. Объединить изменения.&#x27; &gt; plan.txt</div><pre></pre></section><section><div class="command">$ printf &#x27;%s\n&#x27; &#x27;project=Project2&#x27; &#x27;mode=base&#x27; &#x27;version=1.0&#x27; &gt; settings.txt</div><pre></pre></section><section><div class="command">$ wc -l project.txt plan.txt settings.txt</div><pre>       3 project.txt
+       3 plan.txt
+       3 settings.txt
+       9 total</pre></section><section><div class="command">$ git add project.txt plan.txt settings.txt</div><pre></pre></section><section><div class="command">$ git commit -m &quot;Создан Project2 с тремя текстовыми файлами&quot;</div><pre>[main 5ddb5a5] Создан Project2 с тремя текстовыми файлами
+ 3 files changed, 9 insertions(+)
+ create mode 100644 Project2/plan.txt
+ create mode 100644 Project2/project.txt
+ create mode 100644 Project2/settings.txt</pre></section><section><div class="command">$ git show --stat --oneline HEAD</div><pre>5ddb5a5 Создан Project2 с тремя текстовыми файлами
+ Project2/plan.txt     | 3 +++
+ Project2/project.txt  | 3 +++
+ Project2/settings.txt | 3 +++
+ 3 files changed, 9 insertions(+)</pre></section><section><div class="command">$ git status --short --branch</div><pre>## main...origin/main [ahead 1]</pre></section><footer>Вывод реально выполненных команд · Полный протокол сохранен в TXT и JSON</footer></html>

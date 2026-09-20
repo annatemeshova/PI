@@ -1,0 +1,16 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><title>ЛР2 — 7. Перебазирование br2 на main</title><style>
+    *{box-sizing:border-box}body{margin:0;background:#fff;color:#10151c;padding:22px 26px;font-family:Arial,sans-serif}
+    header{border-bottom:2px solid #283d52;padding-bottom:12px;margin-bottom:14px}h1{font-size:23px;margin:0 0 8px}
+    .meta{font:12px Arial;color:#425269;line-height:1.5}section{margin-bottom:10px}
+    .command,pre{font-family:Menlo,monospace;font-size:15px;line-height:1.34;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+    .command{font-weight:700;color:#174875}pre{padding-top:2px}
+    footer{font:12px Arial;color:#546173;border-top:1px solid #b4c0ca;padding-top:9px;margin-top:12px}
+    </style><header><h1>7. Перебазирование br2 на main</h1><div class="meta">Лабораторная работа 2 · Протокол выполнения Git<br>/Users/fedos-mak/Documents/lr-Guz/PI/Project2 · 2026-09-20T13:38:54+03:00</div></header><section><div class="command">$ git rebase main</div><pre>Rebasing (1/3)
+Rebasing (2/3)
+Rebasing (3/3)
+Successfully rebased and updated refs/heads/br2.</pre></section><section><div class="command">$ git log --graph --oneline --decorate -6</div><pre>* 728ff12 (HEAD -&gt; br2) br2: уточнено описание результатов
+* 12feeaa br2: добавлен этап перебазирования
+* 2912c27 fix1: дополнен план работы
+* 4b3e0d0 (main) br1: дополнено описание проекта
+* 5ddb5a5 Создан Project2 с тремя текстовыми файлами
+* 5473ed5 (origin/main, origin/HEAD) Обновлен отчет по лабораторной работе 1</pre></section><section><div class="command">$ git rev-list --count main..br2</div><pre>3</pre></section><section><div class="command">$ git rev-list --merges main..br2</div><pre></pre></section><section><div class="command">$ git status --short --branch</div><pre>## br2</pre></section><footer>Вывод реально выполненных команд · Полный протокол сохранен в TXT и JSON</footer></html>

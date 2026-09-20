@@ -1,0 +1,25 @@
+5. Слияние br1 в br2 через merge
+/Users/fedos-mak/Documents/lr-Guz/PI/Project2
+2026-09-20T13:38:54+03:00
+
+$ git merge --no-ff br1 -m "слияние(merge) br1->br2"
+Merge made by the 'ort' strategy.
+ Project2/project.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+$ git log --graph --oneline --decorate -5
+*   35ccd12 (HEAD -> br2) слияние(merge) br1->br2
+|\  
+| * 4b3e0d0 (br1) br1: дополнено описание проекта
+* | f743a46 fix1: дополнен план работы
+|/  
+* 5ddb5a5 (main) Создан Project2 с тремя текстовыми файлами
+* 5473ed5 (origin/main, origin/HEAD) Обновлен отчет по лабораторной работе 1
+
+$ git show -s --format="commit: %h%nparents: %p%nsubject: %s" HEAD
+commit: 35ccd12
+parents: f743a46 4b3e0d0
+subject: слияние(merge) br1->br2
+
+$ git status --short --branch
+## br2

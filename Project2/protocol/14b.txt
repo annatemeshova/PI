@@ -1,0 +1,25 @@
+14. Запуск внешнего инструмента KDiff3
+/Users/fedos-mak/Documents/lr-Guz/PI/Project2
+2026-09-20T13:53:30+03:00
+
+$ git config --get merge.tool
+kdiff3
+
+$ git mergetool --tool=kdiff3 --no-prompt -- settings.txt
+Merging:
+Project2/settings.txt
+
+Normal merge conflict for 'Project2/settings.txt':
+  {local}: modified file
+  {remote}: modified file
+
+$ git status --short
+?? settings.txt.orig
+
+$ cat settings.txt
+project=Project2
+mode=stable
+version=1.0
+
+$ git ls-files -u
+

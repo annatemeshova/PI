@@ -1,0 +1,29 @@
+8. Fast-forward br2 в main и удаление br2
+/Users/fedos-mak/Documents/lr-Guz/PI/Project2
+2026-09-20T13:38:54+03:00
+
+$ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+$ git merge --ff-only br2
+Updating 4b3e0d0..728ff12
+Fast-forward
+ Project2/plan.txt    | 2 ++
+ Project2/project.txt | 1 +
+ 2 files changed, 3 insertions(+)
+
+$ git branch -d br2
+Deleted branch br2 (was 728ff12).
+
+$ git log --graph --oneline --decorate -6
+* 728ff12 (HEAD -> main) br2: уточнено описание результатов
+* 12feeaa br2: добавлен этап перебазирования
+* 2912c27 fix1: дополнен план работы
+* 4b3e0d0 br1: дополнено описание проекта
+* 5ddb5a5 Создан Project2 с тремя текстовыми файлами
+* 5473ed5 (origin/main, origin/HEAD) Обновлен отчет по лабораторной работе 1
+
+$ git branch -v
+* main 728ff12 [ahead 5] br2: уточнено описание результатов

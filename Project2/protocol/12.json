@@ -1,0 +1,38 @@
+{
+  "step": "12",
+  "title": "12. Перенос последней фиксации без слияния",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI/Project2",
+  "captured_at": "2026-09-20T13:39:48+03:00",
+  "entries": [
+    {
+      "command": "git switch main",
+      "output": "Already on 'main'\nYour branch is ahead of 'origin/main' by 6 commits.\n  (use \"git push\" to publish your local commits)\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git cherry-pick -x br1",
+      "output": "[main a5ca8f2] br1: добавлена памятка cherry-pick\n Date: Sun Sep 20 13:39:25 2026 +0300\n 1 file changed, 3 insertions(+)\n create mode 100644 Project2/cherry-pick.txt\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git show -s --format=\"commit: %h%nparents: %p%nsubject: %s\" main br1",
+      "output": "commit: a5ca8f2\nparents: 2583824\nsubject: br1: добавлена памятка cherry-pick\ncommit: 2b5319a\nparents: 2583824\nsubject: br1: добавлена памятка cherry-pick\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --stat main br1",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git merge-base --is-ancestor br1 main",
+      "output": "",
+      "exit_code": 1
+    },
+    {
+      "command": "git log --graph --oneline --decorate main br1 -5",
+      "output": "* a5ca8f2 (HEAD -> main) br1: добавлена памятка cherry-pick\n| * 2b5319a (br1) br1: добавлена памятка cherry-pick\n|/  \n* 2583824 squash br1->main: описание и пример возможности\n* 728ff12 br2: уточнено описание результатов\n* 12feeaa br2: добавлен этап перебазирования\n",
+      "exit_code": 0
+    }
+  ]
+}

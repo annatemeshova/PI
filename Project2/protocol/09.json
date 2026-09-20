@@ -1,0 +1,53 @@
+{
+  "step": "09",
+  "title": "9. Новая br1 и две фиксации",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI/Project2",
+  "captured_at": "2026-09-20T13:39:24+03:00",
+  "entries": [
+    {
+      "command": "git switch -c br1",
+      "output": "Switched to a new branch 'br1'\n",
+      "exit_code": 0
+    },
+    {
+      "command": "printf '%s\\n' 'Изменения для squash' 'Добавлено описание новой возможности.' > feature.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git add feature.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git commit -m \"br1: добавлено описание возможности\"",
+      "output": "[br1 a55336d] br1: добавлено описание возможности\n 1 file changed, 2 insertions(+)\n create mode 100644 Project2/feature.txt\n",
+      "exit_code": 0
+    },
+    {
+      "command": "printf '%s\\n' 'Добавлен пример использования возможности.' >> feature.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git add feature.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git commit -m \"br1: добавлен пример использования\"",
+      "output": "[br1 9f2a1da] br1: добавлен пример использования\n 1 file changed, 1 insertion(+)\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git log --oneline main..br1",
+      "output": "9f2a1da br1: добавлен пример использования\na55336d br1: добавлено описание возможности\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git rev-list --count main..br1",
+      "output": "2\n",
+      "exit_code": 0
+    }
+  ]
+}

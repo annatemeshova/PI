@@ -1,0 +1,43 @@
+{
+  "step": "14a",
+  "title": "14. Слияние и обнаружение конфликта",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI/Project2",
+  "captured_at": "2026-09-20T13:40:20+03:00",
+  "entries": [
+    {
+      "command": "git config --local merge.tool kdiff3",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git config --local mergetool.kdiff3.path /Users/fedos-mak/Documents/lr-Guz/.tools/kdiff3.app/Contents/MacOS/kdiff3",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git config --local mergetool.keepBackup false",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git merge br1 -m \"слияние br1->main: конфликт разрешен в KDiff3\"",
+      "output": "Auto-merging Project2/settings.txt\nCONFLICT (content): Merge conflict in Project2/settings.txt\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+      "exit_code": 1
+    },
+    {
+      "command": "git status --short",
+      "output": "UU settings.txt\n",
+      "exit_code": 0
+    },
+    {
+      "command": "cat settings.txt",
+      "output": "project=Project2\n<<<<<<< HEAD\nmode=stable\n=======\nmode=feature\n>>>>>>> br1\nversion=1.0\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git ls-files -u",
+      "output": "100644 b80aefc963169c9734ac99bbbced76e86314e474 1\tsettings.txt\n100644 4ac390a10d75e243e85706909167f1d211936b84 2\tsettings.txt\n100644 f4eb64708b1cb7dcac34e0c99eed4a8e97e7719e 3\tsettings.txt\n",
+      "exit_code": 0
+    }
+  ]
+}

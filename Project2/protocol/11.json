@@ -1,0 +1,38 @@
+{
+  "step": "11",
+  "title": "11. Новая br1 и фиксация для cherry-pick",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI/Project2",
+  "captured_at": "2026-09-20T13:39:25+03:00",
+  "entries": [
+    {
+      "command": "git switch -c br1",
+      "output": "Switched to a new branch 'br1'\n",
+      "exit_code": 0
+    },
+    {
+      "command": "printf '%s\\n' 'Памятка' 'Перенос отдельной фиксации выполняется cherry-pick.' 'Слияние ветвей при этом не выполняется.' > cherry-pick.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git add cherry-pick.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git commit -m \"br1: добавлена памятка cherry-pick\"",
+      "output": "[br1 2b5319a] br1: добавлена памятка cherry-pick\n 1 file changed, 3 insertions(+)\n create mode 100644 Project2/cherry-pick.txt\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git log -1 --oneline",
+      "output": "2b5319a br1: добавлена памятка cherry-pick\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git show --stat --oneline HEAD",
+      "output": "2b5319a br1: добавлена памятка cherry-pick\n Project2/cherry-pick.txt | 3 +++\n 1 file changed, 3 insertions(+)\n",
+      "exit_code": 0
+    }
+  ]
+}

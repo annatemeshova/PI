@@ -1,0 +1,12 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><title>ЛР2 — 9. Новая br1 и две фиксации</title><style>
+    *{box-sizing:border-box}body{margin:0;background:#fff;color:#10151c;padding:22px 26px;font-family:Arial,sans-serif}
+    header{border-bottom:2px solid #283d52;padding-bottom:12px;margin-bottom:14px}h1{font-size:23px;margin:0 0 8px}
+    .meta{font:12px Arial;color:#425269;line-height:1.5}section{margin-bottom:10px}
+    .command,pre{font-family:Menlo,monospace;font-size:15px;line-height:1.34;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+    .command{font-weight:700;color:#174875}pre{padding-top:2px}
+    footer{font:12px Arial;color:#546173;border-top:1px solid #b4c0ca;padding-top:9px;margin-top:12px}
+    </style><header><h1>9. Новая br1 и две фиксации</h1><div class="meta">Лабораторная работа 2 · Протокол выполнения Git<br>/Users/fedos-mak/Documents/lr-Guz/PI/Project2 · 2026-09-20T13:39:24+03:00</div></header><section><div class="command">$ git switch -c br1</div><pre>Switched to a new branch &#x27;br1&#x27;</pre></section><section><div class="command">$ printf &#x27;%s\n&#x27; &#x27;Изменения для squash&#x27; &#x27;Добавлено описание новой возможности.&#x27; &gt; feature.txt</div><pre></pre></section><section><div class="command">$ git add feature.txt</div><pre></pre></section><section><div class="command">$ git commit -m &quot;br1: добавлено описание возможности&quot;</div><pre>[br1 a55336d] br1: добавлено описание возможности
+ 1 file changed, 2 insertions(+)
+ create mode 100644 Project2/feature.txt</pre></section><section><div class="command">$ printf &#x27;%s\n&#x27; &#x27;Добавлен пример использования возможности.&#x27; &gt;&gt; feature.txt</div><pre></pre></section><section><div class="command">$ git add feature.txt</div><pre></pre></section><section><div class="command">$ git commit -m &quot;br1: добавлен пример использования&quot;</div><pre>[br1 9f2a1da] br1: добавлен пример использования
+ 1 file changed, 1 insertion(+)</pre></section><section><div class="command">$ git log --oneline main..br1</div><pre>9f2a1da br1: добавлен пример использования
+a55336d br1: добавлено описание возможности</pre></section><section><div class="command">$ git rev-list --count main..br1</div><pre>2</pre></section><footer>Вывод реально выполненных команд · Полный протокол сохранен в TXT и JSON</footer></html>

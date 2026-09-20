@@ -1,0 +1,48 @@
+3. Ветви br1 и fix1 без конфликтов
+/Users/fedos-mak/Documents/lr-Guz/PI/Project2
+2026-09-20T13:38:54+03:00
+
+$ git branch br1
+
+
+$ git branch fix1
+
+
+$ git switch br1
+Switched to branch 'br1'
+
+$ printf '%s\n' 'Ветка br1: добавлено описание проекта.' >> project.txt
+
+
+$ git add project.txt
+
+
+$ git commit -m "br1: дополнено описание проекта"
+[br1 4b3e0d0] br1: дополнено описание проекта
+ 1 file changed, 1 insertion(+)
+
+$ git switch fix1
+Switched to branch 'fix1'
+
+$ printf '%s\n' '3. Проверить результат слияния.' >> plan.txt
+
+
+$ git add plan.txt
+
+
+$ git commit -m "fix1: дополнен план работы"
+[fix1 f743a46] fix1: дополнен план работы
+ 1 file changed, 1 insertion(+)
+
+$ git log --graph --oneline --decorate --all -4
+* f743a46 (HEAD -> fix1) fix1: дополнен план работы
+| * 4b3e0d0 (br1) br1: дополнено описание проекта
+|/  
+* 5ddb5a5 (main) Создан Project2 с тремя текстовыми файлами
+* 5473ed5 (origin/main, origin/HEAD) Обновлен отчет по лабораторной работе 1
+
+$ git diff --name-only main br1
+Project2/project.txt
+
+$ git diff --name-only main fix1
+Project2/plan.txt
