@@ -1,21 +1,36 @@
-<!doctype html><html lang="ru"><meta charset="utf-8"><title>ЛР2 — 14. Завершение слияния после KDiff3</title><style>
-    *{box-sizing:border-box}body{margin:0;background:#fff;color:#10151c;padding:22px 26px;font-family:Arial,sans-serif}
-    header{border-bottom:2px solid #283d52;padding-bottom:12px;margin-bottom:14px}h1{font-size:23px;margin:0 0 8px}
-    .meta{font:12px Arial;color:#425269;line-height:1.5}section{margin-bottom:10px}
-    .command,pre{font-family:Menlo,monospace;font-size:15px;line-height:1.34;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
-    .command{font-weight:700;color:#174875}pre{padding-top:2px}
-    footer{font:12px Arial;color:#546173;border-top:1px solid #b4c0ca;padding-top:9px;margin-top:12px}
-    </style><header><h1>14. Завершение слияния после KDiff3</h1><div class="meta">Лабораторная работа 2 · Протокол выполнения Git<br>/Users/fedos-mak/Documents/lr-Guz/PI/Project2 · 2026-09-20T13:54:08+03:00</div></header><section><div class="command">$ git add settings.txt</div><pre></pre></section><section><div class="command">$ git commit -m &quot;слияние br1-&gt;main: конфликт разрешен в KDiff3&quot;</div><pre>[main ca3eadb] слияние br1-&gt;main: конфликт разрешен в KDiff3</pre></section><section><div class="command">$ cat settings.txt</div><pre>project=Project2
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>if(new URLSearchParams(location.search).has('capture'))document.documentElement.classList.add('capture')</script>
+<title>ЛР2 — протокол 14c</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:#1a1b1e;color:#e4e5e9}
+body{width:1320px;padding:8px;font-family:Menlo,monospace;-webkit-font-smoothing:antialiased}
+html.capture body{zoom:2}
+.window{border:1px solid #4a4b50;border-radius:18px;overflow:hidden;box-shadow:0 1px 5px #0008}
+.bar{height:48px;display:flex;align-items:center;gap:12px;padding:0 16px;background:linear-gradient(#2b2b2b,#242424);border-bottom:1px solid #111}
+.dot{width:20px;height:20px;border-radius:50%;box-shadow:inset 0 1px 1px #fff7}
+.red{background:#ff5f57}.yellow{background:#febc2e}.green{background:#28c840}
+.title{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-weight:600;font-size:21px;color:#a5a5a8;margin-left:8px}
+.folder{display:inline-block;width:22px;height:16px;background:linear-gradient(#75d4ef,#359ccc);border-radius:2px;margin-right:8px;position:relative}
+.folder:before{content:'';position:absolute;top:-3px;left:0;width:10px;height:4px;background:#76c8e6;border-radius:2px 2px 0 0}
+.content{padding:22px 16px 16px;background:radial-gradient(ellipse at 45% 20%,#242b39,#202734 90%)}
+.command,pre,.omission{font-family:Menlo,monospace;font-size:22px;line-height:1.27;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;font-weight:500;letter-spacing:-.15px}
+.entry{margin:0 0 6px}.hash{color:#c8ad47}.ref,.added{color:#7caf6a}.removed{color:#e07b78}.cyan{color:#6eb9c4}
+.cursor{display:inline-block;vertical-align:-3px;width:12px;height:25px;background:#999a9e}.last{margin-top:5px}
+.omission{color:#90959f;line-height:1; margin:1px 0 3px}
+.provenance{background:#242b38;color:#a7adb9;padding:8px 16px 10px;font:13px -apple-system,BlinkMacSystemFont,sans-serif;border-top:1px solid #414754}
+</style></head><body><main class="window"><header class="bar"><i class="dot red"></i><i class="dot yellow"></i><i class="dot green"></i><span class="title"><i class="folder"></i>Project2 — -zsh</span></header>
+<div class="content"><div class="omission">⋯</div><div class="entry"><div class="command">fedos-mak@MacBook-Pro-Fedor Project2 % git commit -m &quot;слияние br1-&gt;main: конфликт разрешен в KDiff3&quot;</div><pre>[main <span class="hash">ca3eadb</span>] слияние br1-&gt;main: конфликт разрешен в KDiff3</pre></div><div class="entry"><div class="command">fedos-mak@MacBook-Pro-Fedor Project2 % cat settings.txt</div><pre>project=Project2
 mode=stable
-version=1.0</pre></section><section><div class="command">$ git ls-files -u</div><pre></pre></section><section><div class="command">$ git show -s --format=&quot;commit: %h%nparents: %p%nsubject: %s&quot; HEAD</div><pre>commit: ca3eadb
-parents: 7b46a12 8fce157
-subject: слияние br1-&gt;main: конфликт разрешен в KDiff3</pre></section><section><div class="command">$ git log --graph --oneline --decorate main br1 -8</div><pre>*   ca3eadb (HEAD -&gt; main) слияние br1-&gt;main: конфликт разрешен в KDiff3
+version=1.0</pre></div><div class="entry"><div class="command">fedos-mak@MacBook-Pro-Fedor Project2 % git ls-files -u</div></div><div class="entry"><div class="command">fedos-mak@MacBook-Pro-Fedor Project2 % git show -s --format=&quot;commit: %h%nparents: %p%nsubject: %s&quot; HEAD</div><pre>commit: <span class="hash">ca3eadb</span>
+parents: <span class="hash">7b46a12</span> <span class="hash">8fce157</span>
+subject: слияние br1-&gt;main: конфликт разрешен в KDiff3</pre></div><div class="entry"><div class="command">fedos-mak@MacBook-Pro-Fedor Project2 % git log --graph --oneline --decorate main br1 -8</div><pre>*   <span class="hash">ca3eadb</span> (<span class="ref">HEAD -&gt; main</span>) слияние br1-&gt;main: конфликт разрешен в KDiff3
 |\  
-| * 8fce157 (br1) br1: выбран режим feature
-| * 2b5319a br1: добавлена памятка cherry-pick
-* | 7b46a12 main: выбран режим stable
-* | a5ca8f2 br1: добавлена памятка cherry-pick
+| * <span class="hash">8fce157</span> (<span class="ref">br1</span>) br1: выбран режим feature
+| * <span class="hash">2b5319a</span> br1: добавлена памятка cherry-pick
+* | <span class="hash">7b46a12</span> main: выбран режим stable
+* | <span class="hash">a5ca8f2</span> br1: добавлена памятка cherry-pick
 |/  
-* 2583824 squash br1-&gt;main: описание и пример возможности
-* 728ff12 br2: уточнено описание результатов
-* 12feeaa br2: добавлен этап перебазирования</pre></section><section><div class="command">$ git status --short --branch</div><pre>## main...origin/main [ahead 11]</pre></section><footer>Вывод реально выполненных команд · Полный протокол сохранен в TXT и JSON</footer></html>
+* <span class="hash">2583824</span> squash br1-&gt;main: описание и пример возможности
+* <span class="hash">728ff12</span> br2: уточнено описание результатов
+* <span class="hash">12feeaa</span> br2: добавлен этап перебазирования</pre></div><div class="entry"><div class="command">fedos-mak@MacBook-Pro-Fedor Project2 % git status --short --branch</div><pre>## main...origin/main [ahead 11]</pre></div><div class="command last">fedos-mak@MacBook-Pro-Fedor Project2 % <span class="cursor"> </span></div></div><footer class="provenance">Фрагменты сохраненного протокола · Пункт 14c · 2026-09-20T13:54:08+03:00 · Полный вывод: 14c.txt / 14c.json</footer></main></body></html>
