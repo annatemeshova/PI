@@ -1,0 +1,11 @@
+{
+  "initial": "5ddb5a57c8bb3241ca0ff57c801295d28581f5ef",
+  "merge-br1-br2": "35ccd12f88ebc7e74742d8c353a7e8edc188d88e",
+  "br2-before-rebase": "16703e9494d2343b3efee9007c946a4ac9d889b7",
+  "br2-after-rebase": "728ff12b3e594db9f7f43ad26b7d2a86cad18673",
+  "br1-before-squash": "9f2a1dad1decc63ca6d68590ea45e76af00d2b35",
+  "squash": "258382491aa0ef0c1b06def8c4ecbc61490ae252",
+  "cherry-source": "2b5319a9d5a57d66dbfbe7e3950ef8f83a49b8a3",
+  "cherry-result": "a5ca8f2b925c1f8c31bf067544f36b081254d87d",
+  "final": "ca3eadb5845d7e9ef351612f6dc7ac420e929b2c"
+}

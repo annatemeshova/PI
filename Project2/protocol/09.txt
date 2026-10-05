@@ -1,0 +1,34 @@
+9. Новая br1 и две фиксации
+/Users/fedos-mak/Documents/lr-Guz/PI/Project2
+2026-09-20T13:39:24+03:00
+
+$ git switch -c br1
+Switched to a new branch 'br1'
+
+$ printf '%s\n' 'Изменения для squash' 'Добавлено описание новой возможности.' > feature.txt
+
+
+$ git add feature.txt
+
+
+$ git commit -m "br1: добавлено описание возможности"
+[br1 a55336d] br1: добавлено описание возможности
+ 1 file changed, 2 insertions(+)
+ create mode 100644 Project2/feature.txt
+
+$ printf '%s\n' 'Добавлен пример использования возможности.' >> feature.txt
+
+
+$ git add feature.txt
+
+
+$ git commit -m "br1: добавлен пример использования"
+[br1 9f2a1da] br1: добавлен пример использования
+ 1 file changed, 1 insertion(+)
+
+$ git log --oneline main..br1
+9f2a1da br1: добавлен пример использования
+a55336d br1: добавлено описание возможности
+
+$ git rev-list --count main..br1
+2

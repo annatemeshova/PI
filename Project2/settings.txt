@@ -1,0 +1,3 @@
+project=Project2
+mode=stable
+version=1.0

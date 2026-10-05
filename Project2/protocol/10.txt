@@ -1,0 +1,39 @@
+10. Squash двух фиксаций в main
+/Users/fedos-mak/Documents/lr-Guz/PI/Project2
+2026-09-20T13:39:25+03:00
+
+$ git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 5 commits.
+  (use "git push" to publish your local commits)
+
+$ git merge --squash br1
+Updating 728ff12..9f2a1da
+Fast-forward
+Squash commit -- not updating HEAD
+ Project2/feature.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 Project2/feature.txt
+
+$ git diff --cached --stat
+ Project2/feature.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+$ git commit -m "squash br1->main: описание и пример возможности"
+[main 2583824] squash br1->main: описание и пример возможности
+ 1 file changed, 3 insertions(+)
+ create mode 100644 Project2/feature.txt
+
+$ git show -s --format="commit: %h%nparents: %p%nsubject: %s" HEAD
+commit: 2583824
+parents: 728ff12
+subject: squash br1->main: описание и пример возможности
+
+$ git diff --stat main br1
+
+
+$ git branch -D br1
+Deleted branch br1 (was 9f2a1da).
+
+$ git branch -v
+* main 2583824 [ahead 6] squash br1->main: описание и пример возможности

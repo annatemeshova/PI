@@ -1,0 +1,38 @@
+2. Начальная фиксация с тремя файлами
+/Users/fedos-mak/Documents/lr-Guz/PI/Project2
+2026-09-20T13:38:53+03:00
+
+$ printf '%s\n' 'Project2' 'Лабораторная работа 2: ветвление Git.' 'Тема: слияние и перенос изменений.' > project.txt
+
+
+$ printf '%s\n' 'План работы' '1. Создать ветви.' '2. Объединить изменения.' > plan.txt
+
+
+$ printf '%s\n' 'project=Project2' 'mode=base' 'version=1.0' > settings.txt
+
+
+$ wc -l project.txt plan.txt settings.txt
+       3 project.txt
+       3 plan.txt
+       3 settings.txt
+       9 total
+
+$ git add project.txt plan.txt settings.txt
+
+
+$ git commit -m "Создан Project2 с тремя текстовыми файлами"
+[main 5ddb5a5] Создан Project2 с тремя текстовыми файлами
+ 3 files changed, 9 insertions(+)
+ create mode 100644 Project2/plan.txt
+ create mode 100644 Project2/project.txt
+ create mode 100644 Project2/settings.txt
+
+$ git show --stat --oneline HEAD
+5ddb5a5 Создан Project2 с тремя текстовыми файлами
+ Project2/plan.txt     | 3 +++
+ Project2/project.txt  | 3 +++
+ Project2/settings.txt | 3 +++
+ 3 files changed, 9 insertions(+)
+
+$ git status --short --branch
+## main...origin/main [ahead 1]

@@ -1,0 +1,33 @@
+{
+  "step": "14b",
+  "title": "14. Запуск внешнего инструмента KDiff3",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI/Project2",
+  "captured_at": "2026-09-20T13:53:30+03:00",
+  "entries": [
+    {
+      "command": "git config --get merge.tool",
+      "output": "kdiff3\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git mergetool --tool=kdiff3 --no-prompt -- settings.txt",
+      "output": "Merging:\nProject2/settings.txt\n\nNormal merge conflict for 'Project2/settings.txt':\n  {local}: modified file\n  {remote}: modified file\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git status --short",
+      "output": "?? settings.txt.orig\n",
+      "exit_code": 0
+    },
+    {
+      "command": "cat settings.txt",
+      "output": "project=Project2\nmode=stable\nversion=1.0\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git ls-files -u",
+      "output": "",
+      "exit_code": 0
+    }
+  ]
+}

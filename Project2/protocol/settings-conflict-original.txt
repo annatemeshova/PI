@@ -1,0 +1,7 @@
+project=Project2
+<<<<<<< HEAD
+mode=stable
+=======
+mode=feature
+>>>>>>> br1
+version=1.0

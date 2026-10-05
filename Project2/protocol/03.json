@@ -1,0 +1,73 @@
+{
+  "step": "03",
+  "title": "3. Ветви br1 и fix1 без конфликтов",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI/Project2",
+  "captured_at": "2026-09-20T13:38:54+03:00",
+  "entries": [
+    {
+      "command": "git branch br1",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git branch fix1",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git switch br1",
+      "output": "Switched to branch 'br1'\n",
+      "exit_code": 0
+    },
+    {
+      "command": "printf '%s\\n' 'Ветка br1: добавлено описание проекта.' >> project.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git add project.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git commit -m \"br1: дополнено описание проекта\"",
+      "output": "[br1 4b3e0d0] br1: дополнено описание проекта\n 1 file changed, 1 insertion(+)\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git switch fix1",
+      "output": "Switched to branch 'fix1'\n",
+      "exit_code": 0
+    },
+    {
+      "command": "printf '%s\\n' '3. Проверить результат слияния.' >> plan.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git add plan.txt",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git commit -m \"fix1: дополнен план работы\"",
+      "output": "[fix1 f743a46] fix1: дополнен план работы\n 1 file changed, 1 insertion(+)\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git log --graph --oneline --decorate --all -4",
+      "output": "* f743a46 (HEAD -> fix1) fix1: дополнен план работы\n| * 4b3e0d0 (br1) br1: дополнено описание проекта\n|/  \n* 5ddb5a5 (main) Создан Project2 с тремя текстовыми файлами\n* 5473ed5 (origin/main, origin/HEAD) Обновлен отчет по лабораторной работе 1\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --name-only main br1",
+      "output": "Project2/project.txt\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --name-only main fix1",
+      "output": "Project2/plan.txt\n",
+      "exit_code": 0
+    }
+  ]
+}

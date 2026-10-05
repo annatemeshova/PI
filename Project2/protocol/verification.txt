@@ -1,0 +1,44 @@
+PASS Сохранены все исходные файлы ЛР1
+PASS Основная ветвь main
+PASS Рабочие ветви main и br1
+PASS Начальная фиксация содержит ровно три файла
+PASS Три исходные строки в Project2/plan.txt
+PASS Три исходные строки в Project2/project.txt
+PASS Три исходные строки в Project2/settings.txt
+PASS Точный комментарий merge
+PASS Два родителя обычного merge
+PASS Rebase сохранил содержимое
+PASS После rebase три линейных коммита
+PASS Squash заменил ровно две фиксации
+PASS Один родитель squash
+PASS Squash сохранил все файлы
+PASS Cherry-pick создал другой коммит
+PASS Cherry-pick сохранил дерево
+PASS Один родитель cherry-pick
+PASS До слияния br1 не являлась предком cherry-pick
+PASS В br1 выбран feature
+PASS В main выбран stable
+PASS После KDiff3 сохранен stable
+PASS Два родителя итогового merge
+PASS Нет неразрешенных конфликтов
+PASS Только отчетные материалы добавлены после учебных операций
+PASS 19 скриншотов
+PASS Протокол 01
+PASS Протокол 02
+PASS Протокол 03
+PASS Протокол 04
+PASS Протокол 05
+PASS Протокол 06
+PASS Протокол 07a
+PASS Протокол 07b
+PASS Протокол 08
+PASS Протокол 09
+PASS Протокол 10
+PASS Протокол 11
+PASS Протокол 12
+PASS Протокол 13
+PASS Протокол 14a
+PASS Протокол 14b
+PASS Протокол 14c
+
+Всего проверок: 42

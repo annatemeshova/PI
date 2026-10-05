@@ -1,0 +1,43 @@
+{
+  "step": "01",
+  "title": "1. Создание проекта Project2",
+  "cwd": "/Users/fedos-mak/Documents/lr-Guz/PI",
+  "captured_at": "2026-09-20T13:38:53+03:00",
+  "entries": [
+    {
+      "command": "git switch main",
+      "output": "Already on 'main'\nYour branch is up to date with 'origin/main'.\n",
+      "exit_code": 0
+    },
+    {
+      "command": "mkdir Project2",
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": "git rev-parse --show-toplevel",
+      "output": "/Users/fedos-mak/Documents/lr-Guz/PI\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git branch --show-current",
+      "output": "main\n",
+      "exit_code": 0
+    },
+    {
+      "command": "ls -ld Project1 Project2",
+      "output": "drwxr-xr-x@ 5 fedos-mak  staff  160 Sep 20 13:28 Project1\ndrwxr-xr-x@ 2 fedos-mak  staff   64 Sep 20 13:38 Project2\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git --version",
+      "output": "git version 2.53.0\n",
+      "exit_code": 0
+    },
+    {
+      "command": "git status --short --branch",
+      "output": "## main...origin/main\n",
+      "exit_code": 0
+    }
+  ]
+}

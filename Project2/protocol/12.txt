@@ -1,0 +1,36 @@
+12. Перенос последней фиксации без слияния
+/Users/fedos-mak/Documents/lr-Guz/PI/Project2
+2026-09-20T13:39:48+03:00
+
+$ git switch main
+Already on 'main'
+Your branch is ahead of 'origin/main' by 6 commits.
+  (use "git push" to publish your local commits)
+
+$ git cherry-pick -x br1
+[main a5ca8f2] br1: добавлена памятка cherry-pick
+ Date: Sun Sep 20 13:39:25 2026 +0300
+ 1 file changed, 3 insertions(+)
+ create mode 100644 Project2/cherry-pick.txt
+
+$ git show -s --format="commit: %h%nparents: %p%nsubject: %s" main br1
+commit: a5ca8f2
+parents: 2583824
+subject: br1: добавлена памятка cherry-pick
+commit: 2b5319a
+parents: 2583824
+subject: br1: добавлена памятка cherry-pick
+
+$ git diff --stat main br1
+
+
+$ git merge-base --is-ancestor br1 main
+
+
+$ git log --graph --oneline --decorate main br1 -5
+* a5ca8f2 (HEAD -> main) br1: добавлена памятка cherry-pick
+| * 2b5319a (br1) br1: добавлена памятка cherry-pick
+|/  
+* 2583824 squash br1->main: описание и пример возможности
+* 728ff12 br2: уточнено описание результатов
+* 12feeaa br2: добавлен этап перебазирования
